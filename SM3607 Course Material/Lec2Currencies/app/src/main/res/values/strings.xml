@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name" translatable="false">Currencies</string>
+    <string name="str_hkd" translatable="false">HKD</string>
+    <string name="str_usd" translatable="false">USD</string>
+    <string name="str_convert" translatable="false">Convert</string>
+    <string name="land" translatable="false">I\'m available only in the landscape orientation</string>
+</resources>

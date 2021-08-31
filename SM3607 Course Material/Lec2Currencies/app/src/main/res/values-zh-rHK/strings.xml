@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">匯率</string>
+    <string name="str_hkd" translatable="false">港幣</string>
+    <string name="str_usd" translatable="false">美元</string>
+    <string name="str_convert" translatable="false">兌換</string>
+</resources>
