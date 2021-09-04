@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">Activity Demo</string>
     <string name="start">Start Activity</string>
-    <string name="call">Call Office</string>
-    <string name="add">Add To Contact</string>
+    <string name="call">Call HongBofus Office</string>
+    <string name="add">Add To Contacts</string>
     <string name="to">To</string>
     <string name="subject">Subject</string>
 </resources>
