@@ -5,4 +5,5 @@
     <string name="add">Add To Contacts</string>
     <string name="to">To</string>
     <string name="subject">Subject</string>
+    <string name="pick">Pick a Contact</string>
 </resources>

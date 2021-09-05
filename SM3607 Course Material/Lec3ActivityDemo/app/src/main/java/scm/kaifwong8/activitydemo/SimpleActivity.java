@@ -25,5 +25,9 @@ public class SimpleActivity extends AppCompatActivity {
         email.setText(intent.getStringExtra(KEY_TO));
         subject.setText(intent.getStringExtra(KEY_SUBJECT));
         message.setText(intent.getStringExtra(KEY_MESSAGE));
+
+        
     }
+
+
 }
