@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Currency Converter</string>
+    <string name="str_hkd">港元</string>
+    <string name="str_usd">美元</string>
+    <string name="convert">轉變</string>
+</resources>
