@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">lec3</string>
+    <string name="to">To</string>
+    <string name="subject">Subject</string>
+    <string name="msg">Message</string>
+    <string name="send">Send</string>
+</resources>

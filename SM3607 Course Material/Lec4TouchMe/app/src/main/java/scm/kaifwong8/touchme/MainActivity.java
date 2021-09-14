@@ -3,6 +3,7 @@ package scm.kaifwong8.touchme;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.widget.TextView;
@@ -44,8 +45,27 @@ public class MainActivity extends AppCompatActivity {
                 });
             }
         }, 0, 50);
+        */
 
-         */
+        TouchMe3 cv = findViewById(R.id.touchMe3);
+        TextView score = findViewById(R.id.text_score);
+        TextView timeLeft = findViewById(R.id.text_timeLeft);
+
+        new CountDownTimer(20000, 1000) {
+
+            public void onTick(long millisUntilFinished) {
+                Log.d(TAG, "seconds remaining: " + millisUntilFinished);
+                timeLeft.setText("Time Left: " + (int)Math.floor(millisUntilFinished)/1000);
+            }
+
+            public void onFinish() {
+                Log.d(TAG, "onFinish: done");
+                timeLeft.setText("Game Over");
+                cv.gameOver = true;
+            }
+        }.start();
+
+        cv.setScoreTextView(score);
     }
 
 

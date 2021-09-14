@@ -8,6 +8,7 @@ import android.graphics.PointF;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 
@@ -26,6 +27,10 @@ public class TouchMe3 extends View {
     private boolean isLeft = true;
     private int speed = 5;
 
+    private int score = 0;
+    public boolean gameOver = false;
+    private TextView tvScore = null;
+
     public TouchMe3(Context context) {
         super(context);
     }
@@ -42,10 +47,18 @@ public class TouchMe3 extends View {
         maxH = this.getHeight();
         maxR = Math.min(maxW, maxH)/2f;
 
+        if (!gameOver) {
+            updatePos();
+            canvas.drawCircle(c.x, c.y, r, p);
+        }
         updatePos();
         canvas.drawCircle(c.x, c.y, r, p);
 
         invalidate();
+    }
+
+    public void setScoreTextView(TextView tv) {
+        tvScore = tv;
     }
 
     @Override
@@ -54,7 +67,13 @@ public class TouchMe3 extends View {
         float y = event.getY();
         float d = Float.parseFloat(Math.sqrt((x-c.x)*(x-c.x) + (y-c.y)*(y-c.y))+"");
 
-        if (d<r) { updateCirInfo(); }
+        if (d<r) {
+            updateCirInfo();
+            score++;
+            if (tvScore != null) {
+                tvScore.setText("Score: " + score);
+            }
+        }
 
         return false;
     }
