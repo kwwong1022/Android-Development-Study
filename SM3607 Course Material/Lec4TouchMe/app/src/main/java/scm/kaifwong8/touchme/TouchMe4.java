@@ -6,14 +6,18 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.PointF;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 
 import androidx.annotation.Nullable;
 
 import java.util.Random;
+import java.util.Timer;
+import java.util.TimerTask;
 
-public class TouchMe3 extends View {
+public class TouchMe4 extends View {
+    private static final String TAG = "TouchMe4";
     // field
     private Paint p = new Paint(Color.RED);
     private PointF c = new PointF(0, 0);
@@ -21,17 +25,26 @@ public class TouchMe3 extends View {
     private float  maxR;
     private Random rand = new Random();
 
-    private int maxW, maxH, color;
+    private int maxW;
+    private int maxH;
     private boolean isUp = true;
     private boolean isLeft = true;
-    private int speed = 5;
 
-    public TouchMe3(Context context) {
+    public TouchMe4(Context context) {
         super(context);
     }
 
-    public TouchMe3(Context context, @Nullable AttributeSet attrs) {
+    public TouchMe4(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
+        Timer t = new Timer();
+        t.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                updateCirInfo();
+                invalidate();
+                Log.d(TAG, "run: called");
+            }
+        }, 0, 500);
     }
 
     @Override
@@ -54,7 +67,9 @@ public class TouchMe3 extends View {
         float y = event.getY();
         float d = Float.parseFloat(Math.sqrt((x-c.x)*(x-c.x) + (y-c.y)*(y-c.y))+"");
 
-        if (d<r) { updateCirInfo(); }
+        if (d<r) {
+            updateCirInfo();
+        }
 
         return false;
     }
@@ -67,25 +82,24 @@ public class TouchMe3 extends View {
     }
 
     private void updateCirInfo() {
-        color = Color.rgb(rand.nextInt(256), rand.nextInt(256), rand.nextInt(256));
-        c.x = rand.nextInt(this.getWidth());
-        c.y = rand.nextInt(this.getHeight());
-        p.setColor(color);
-        r = rand.nextFloat()*maxR+30;
-
-        updatePos();
+        int color = Color.rgb(rand.nextInt(256), rand.nextInt(256), rand.nextInt(256));
+        this.c.x = rand.nextInt(this.getWidth());
+        this.c.y = rand.nextInt(this.getHeight());
+        this.p.setColor(color);
+        this.r = rand.nextFloat()*maxR+30;
     }
 
     private void updatePos() {
+        int speed = 5;
         if (isUp) {
-            c.y-=speed;
+            c.y-= speed;
         } else {
-            c.y+=speed;
+            c.y+= speed;
         }
         if (isLeft) {
-            c.x-=speed;
+            c.x-= speed;
         } else {
-            c.x+=speed;
+            c.x+= speed;
         }
 
         if (c.y < 0) {
