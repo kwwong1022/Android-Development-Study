@@ -6,8 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <scm.kaifwong8.touchme.TouchMe3
-        android:id="@+id/touchMe3"
+    <scm.kaifwong8.touchme.TouchMe
+        android:id="@+id/touchMe"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"

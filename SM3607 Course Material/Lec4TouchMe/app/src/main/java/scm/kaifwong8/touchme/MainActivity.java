@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.util.Log;
 import android.view.MotionEvent;
+import android.view.View;
 import android.widget.TextView;
 
 import java.util.Timer;
@@ -16,10 +17,15 @@ public class MainActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity";
     private int t = 0;
 
+    private View touchMe;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        touchMe = findViewById(R.id.touchMe);
+
         // exercise 1
         // setContentView(new TouchMe(this));
         // exercise 2
@@ -29,25 +35,7 @@ public class MainActivity extends AppCompatActivity {
         // exercise 4
         // setContentView(new TouchMe4(this));
 
-        /*
-        TextView txt = findViewById(R.id.debug_txt);
-
-        Timer timer = new Timer();
-        timer.schedule(new TimerTask() {
-            @Override
-            public void run() {
-                MainActivity.this.runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        txt.setText("current value: " + t);
-                        t++;
-                    }
-                });
-            }
-        }, 0, 50);
-        */
-
-        TouchMe3 cv = findViewById(R.id.touchMe3);
+        TouchMe cv = findViewById(R.id.touchMe);
         TextView score = findViewById(R.id.text_score);
         TextView timeLeft = findViewById(R.id.text_timeLeft);
 
@@ -62,13 +50,14 @@ public class MainActivity extends AppCompatActivity {
                 Log.d(TAG, "onFinish: done");
                 timeLeft.setText("Game Over");
                 cv.gameOver = true;
+                cv.timer.cancel();
             }
         }.start();
 
         cv.setScoreTextView(score);
     }
 
-
-
-
+    public void setTouchMeZIndex(int z) {
+        touchMe.setZ(z);
+    }
 }

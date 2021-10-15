@@ -13,6 +13,7 @@ import android.widget.TextView;
 import androidx.annotation.Nullable;
 
 import java.util.Random;
+import java.util.Timer;
 
 public class TouchMe3 extends View {
     // field
@@ -51,7 +52,6 @@ public class TouchMe3 extends View {
             updatePos();
             canvas.drawCircle(c.x, c.y, r, p);
         }
-        updatePos();
         canvas.drawCircle(c.x, c.y, r, p);
 
         invalidate();
@@ -67,7 +67,7 @@ public class TouchMe3 extends View {
         float y = event.getY();
         float d = Float.parseFloat(Math.sqrt((x-c.x)*(x-c.x) + (y-c.y)*(y-c.y))+"");
 
-        if (d<r) {
+        if (d<r && !gameOver) {
             updateCirInfo();
             score++;
             if (tvScore != null) {

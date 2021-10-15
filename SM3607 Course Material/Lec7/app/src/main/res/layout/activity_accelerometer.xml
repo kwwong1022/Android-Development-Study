@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AccelerometerActivity">
+
+    <TextView
+        android:id="@+id/txt_y"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="128dp"
+        android:text="y: 0"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txt_x"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:text="x: 0"
+        app:layout_constraintBaseline_toBaselineOf="@+id/txt_y"
+        app:layout_constraintEnd_toStartOf="@+id/txt_y" />
+
+    <TextView
+        android:id="@+id/txt_z"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="z: 0"
+        app:layout_constraintBaseline_toBaselineOf="@+id/txt_y"
+        app:layout_constraintStart_toEndOf="@+id/txt_y" />
+
+    <TextView
+        android:id="@+id/txt_face"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="face: up"
+        app:layout_constraintBottom_toTopOf="@+id/txt_y"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/txt_shake"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="shake test"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_y" />
+
+    <TextView
+        android:id="@+id/txt_ay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="ay: 0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_shake" />
+
+    <TextView
+        android:id="@+id/txt_ax"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:text="ax: 0"
+        app:layout_constraintBaseline_toBaselineOf="@+id/txt_ay"
+        app:layout_constraintEnd_toStartOf="@+id/txt_ay" />
+
+    <TextView
+        android:id="@+id/txt_az"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="az: 0"
+        app:layout_constraintBaseline_toBaselineOf="@+id/txt_ay"
+        app:layout_constraintStart_toEndOf="@+id/txt_ay" />
+
+    <TextView
+        android:id="@+id/txt_gy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="gy: 0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_ay" />
+
+    <TextView
+        android:id="@+id/txt_gx"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:text="gx: 0"
+        app:layout_constraintBaseline_toBaselineOf="@+id/txt_gy"
+        app:layout_constraintEnd_toStartOf="@+id/txt_gy" />
+
+    <TextView
+        android:id="@+id/txt_gz"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="gz: 0"
+        app:layout_constraintBaseline_toBaselineOf="@+id/txt_gy"
+        app:layout_constraintStart_toEndOf="@+id/txt_gy" />
+</androidx.constraintlayout.widget.ConstraintLayout>
