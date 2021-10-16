@@ -57,12 +57,12 @@ public class AccelerometerActivity extends AppCompatActivity {
             a[1] = event.values[1] - g[1];
             a[2] = event.values[2] - g[2];
 
-            txtAX.setText("gx: " + a[0]);
-            txtAY.setText("gy: " + a[1]);
-            txtAZ.setText("gz: " + a[2]);
-            txtGX.setText("ax: " + g[0]);
-            txtGY.setText("ay: " + g[1]);
-            txtGZ.setText("az: " + g[2]);
+            txtAX.setText("ax: " + Math.floor((float)a[0]));
+            txtAY.setText("ay: " + Math.floor((float)a[1]));
+            txtAZ.setText("az: " + Math.floor((float)a[2]));
+            txtGX.setText("gx: " + Math.floor((float)g[0]));
+            txtGY.setText("gy: " + Math.floor((float)g[1]));
+            txtGZ.setText("gz: " + Math.floor((float)g[2]));
 
             int threshold = 3;
 

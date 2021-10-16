@@ -1,5 +1,0 @@
-<resources>
-    <string name="app_name">Touch Me</string>
-    <string name="score">Score: 0</string>
-    <string name="time_left">Time Left: 0</string>
-</resources>
